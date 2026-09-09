@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Sitemap: https://YOUR_PRODUCTION_DOMAIN.com/sitemap.xml
