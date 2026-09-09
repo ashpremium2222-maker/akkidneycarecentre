@@ -279,4 +279,157 @@
     📍 View Our Branches
   </button>
 </div>
+<style>
+  .founder-widget-container {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 99998;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  .founder-widget-button {
+    background: white;
+    border: 2px solid #142d57;
+    border-radius: 50px;
+    padding: 6px 16px 6px 6px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #142d57;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(20, 45, 87, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s;
+  }
+  .founder-widget-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(20, 45, 87, 0.3);
+    background: #f8fafc;
+  }
+  .founder-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e2e8f0;
+  }
+  .founder-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .founder-name {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #1e293b;
+  }
+  .founder-title {
+    font-size: 12px;
+    color: #64748b;
+    font-weight: normal;
+  }
+  
+  .founder-popup {
+    display: none;
+    position: absolute;
+    bottom: 70px;
+    left: 0;
+    width: 300px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    overflow: hidden;
+    border: 1px solid #eee;
+    animation: slideUpFounder 0.3s ease-out;
+  }
+  .founder-popup.show {
+    display: block;
+  }
+  @keyframes slideUpFounder {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .founder-popup-header {
+    position: relative;
+    height: 100px;
+    background: linear-gradient(135deg, #142d57, #1a4387);
+  }
+  .founder-close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+  .founder-close-btn:hover {
+    background: rgba(255,255,255,0.3);
+  }
+  .founder-popup-body {
+    padding: 0 20px 20px;
+    text-align: center;
+    margin-top: -50px;
+  }
+  .founder-popup-avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 12px;
+    background: white;
+  }
+  .founder-popup-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1e293b;
+    margin-bottom: 4px;
+  }
+  .founder-popup-title {
+    font-size: 14px;
+    color: #2563eb;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .founder-popup-desc {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.5;
+  }
+</style>
+
+<div class="founder-widget-container">
+  <div class="founder-popup" id="founderPopup">
+    <div class="founder-popup-header">
+      <button class="founder-close-btn" onclick="document.getElementById('founderPopup').classList.remove('show')">&times;</button>
+    </div>
+    <div class="founder-popup-body">
+      <img src="images/founder.jpg" alt="Akshay Kakad" class="founder-popup-avatar">
+      <div class="founder-popup-name">Akshay Kakad</div>
+      <div class="founder-popup-title">Founder & CEO</div>
+      <div class="founder-popup-desc">
+        Dedicated to providing compassionate and advanced kidney care. Leading AK Kidney Care Centre towards better kidneys and healthier lives.
+      </div>
+    </div>
+  </div>
+  <button class="founder-widget-button" onclick="document.getElementById('founderPopup').classList.toggle('show')">
+    <img src="images/founder.jpg" alt="Akshay Kakad" class="founder-avatar">
+    <div class="founder-info">
+      <span class="founder-name">Akshay Kakad</span>
+      <span class="founder-title">Founder & CEO</span>
+    </div>
+  </button>
+</div>
 </body></html>
