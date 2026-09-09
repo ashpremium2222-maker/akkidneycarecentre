@@ -1,1 +1,8 @@
-{"rewrites": [{"source": "/((?!admin).*)", "destination": "/index.html"}]}
+{
+  "rewrites": [
+    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
+    { "source": "/robots.txt",  "destination": "/robots.txt" },
+    { "source": "/admin/(.*)", "destination": "/admin/index.html" },
+    { "source": "/((?!admin|images|js|css|sitemap.xml|robots.txt|favicon.ico).*)", "destination": "/index.html" }
+  ]
+}
