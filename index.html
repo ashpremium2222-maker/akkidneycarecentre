@@ -432,4 +432,37 @@
     </div>
   </button>
 </div>
+<script>
+  (function() {
+    function toggleWidgets() {
+      const isAdmin = window.location.pathname.startsWith('/admin');
+      const branchesWidget = document.querySelector('.branches-widget-container');
+      const founderWidget = document.querySelector('.founder-widget-container');
+      if (branchesWidget) branchesWidget.style.display = isAdmin ? 'none' : 'block';
+      if (founderWidget) founderWidget.style.display = isAdmin ? 'none' : 'block';
+    }
+    
+    // Initial check
+    toggleWidgets();
+    
+    // Listen for pushState/replaceState/popstate
+    const originalPushState = history.pushState;
+    const originalReplaceState = history.replaceState;
+    
+    history.pushState = function() {
+      originalPushState.apply(this, arguments);
+      toggleWidgets();
+    };
+    
+    history.replaceState = function() {
+      originalReplaceState.apply(this, arguments);
+      toggleWidgets();
+    };
+    
+    window.addEventListener('popstate', toggleWidgets);
+    
+    // MutationObserver fallback just in case
+    new MutationObserver(toggleWidgets).observe(document.body, { childList: true, subtree: true });
+  })();
+</script>
 </body></html>
