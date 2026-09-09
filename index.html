@@ -376,7 +376,7 @@
   .founder-close-btn:hover {
     background: rgba(255,255,255,0.3);
   }
-  .founder-popup-body {
+  .founder-popup-body { position: relative; z-index: 10;
     padding: 0 20px 20px;
     text-align: center;
     margin-top: -50px;
@@ -465,4 +465,33 @@
     new MutationObserver(toggleWidgets).observe(document.body, { childList: true, subtree: true });
   })();
 </script>
+<style>
+  @media (max-width: 768px) {
+    .founder-widget-container {
+      bottom: 80px !important;
+      left: 16px !important;
+    }
+    .branches-widget-container {
+      bottom: 16px !important;
+      right: 16px !important;
+    }
+    .founder-widget-button {
+      padding: 4px 12px 4px 4px !important;
+    }
+    .branches-widget-button {
+      padding: 10px 16px !important;
+      font-size: 14px !important;
+    }
+    .founder-info {
+      display: none !important; /* Hide text on small screens, show only avatar */
+    }
+    .founder-widget-button::after {
+      content: "Founder";
+      font-size: 13px;
+      font-weight: bold;
+      margin-left: 4px;
+      margin-right: 8px;
+    }
+  }
+</style>
 </body></html>
