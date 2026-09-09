@@ -153,11 +153,11 @@
     position: absolute;
     bottom: 70px;
     right: 0;
-    width: 320px;
+    width: calc(100vw - 48px); max-width: 320px;
     background: white;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    overflow: hidden;
+    overflow-y: auto; overflow-x: hidden; max-height: calc(100vh - 100px);
     border: 1px solid #eee;
     animation: slideUp 0.3s ease-out;
   }
@@ -336,11 +336,11 @@
     position: absolute;
     bottom: 70px;
     left: 0;
-    width: 300px;
+    width: calc(100vw - 48px); max-width: 300px;
     background: white;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    overflow: hidden;
+    overflow-y: auto; overflow-x: hidden; max-height: calc(100vh - 100px);
     border: 1px solid #eee;
     animation: slideUpFounder 0.3s ease-out;
   }
