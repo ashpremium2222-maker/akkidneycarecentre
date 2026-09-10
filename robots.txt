@@ -2,5 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
-# Replace SITE_DOMAIN with your real production domain before going live
-Sitemap: https://SITE_DOMAIN/sitemap.xml
+Sitemap: https://akkidneycarecentre.in/sitemap.xml
